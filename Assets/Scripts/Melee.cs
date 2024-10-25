@@ -51,6 +51,4 @@ public class Melee : MonoBehaviour
         }
         // TODO Play an animation for the weapon
     }
-
-    }
 }
