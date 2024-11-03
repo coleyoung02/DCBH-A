@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public float speed = 10.4f;
-
-    public float dashSpeed = 20.0f;
-    public float dashDuration = 0.2f;
-    public float dashCooldown = 1.0f;
+    [SerializeField] private float speed;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashDuration;
+    [SerializeField] private float dashCooldown;
 
     private float dashTime;
     private float dashCooldownTime;
     private bool isDashing;
+    private Rigidbody2D rb;
 
     void Start()
     {
         dashTime = 0;
         dashCooldownTime = 0;
         isDashing = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -47,28 +48,30 @@ public class NewBehaviourScript : MonoBehaviour
         {
             currentSpeed = speed;
         }
+        //float currentSpeed = isDashing ? dashSpeed : speed; apparently this also works cuz its a simplified if-else statement
 
-        Vector3 pos = transform.position;
 
-        // Movement
+        // Calculate movement direction
+        Vector2 movement = Vector2.zero;
         if (Input.GetKey("w"))
         {
-            pos.y += currentSpeed * Time.deltaTime;
+            movement.y += 1;
         }
         if (Input.GetKey("s"))
         {
-            pos.y -= currentSpeed * Time.deltaTime;
+            movement.y -= 1;
         }
         if (Input.GetKey("d"))
         {
-            pos.x += currentSpeed * Time.deltaTime;
+            movement.x += 1;
         }
         if (Input.GetKey("a"))
         {
-            pos.x -= currentSpeed * Time.deltaTime;
+            movement.x -= 1;
         }
 
-        transform.position = pos;
+        // Apply velocity to Rigidbody2D
+        rb.velocity = movement.normalized * currentSpeed;
 
         // Dash duration countdown
         if (isDashing)
