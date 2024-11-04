@@ -20,7 +20,7 @@ public class Melee : MonoBehaviour
     {
         nextAttackTime = 0f;
         weaponCollider = weapon.GetComponent<Collider2D>();
-        List<Collider2D> hitEnemies = new List<Collider2D>();
+        hitEnemies = new List<Collider2D>();
     }
 
     // Update is called once per frame
