@@ -27,6 +27,11 @@ public class Melee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.GetIsPaused())
+        {
+            return;
+        }
+
         // Attack every weaponSpeed seconds when holding down attack hotkey
         if (Input.GetKey(attackHotkey) && Time.time >= nextAttackTime)
         {
