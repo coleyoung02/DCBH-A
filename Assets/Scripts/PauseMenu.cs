@@ -31,7 +31,6 @@ public class PauseMenu : MonoBehaviour
             ResumeGame();
         }
     }
-
     void PauseGame()
     {
         pauseMenuUI.SetActive(true);
@@ -58,7 +57,7 @@ public class PauseMenu : MonoBehaviour
         // TODO use SceneManager to load main menu scene
     }
 
-    public bool GetIsPaused()
+    public static bool GetIsPaused()
     {
         return isPaused;
     }
