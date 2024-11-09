@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6082539606930091478}
   - component: {fileID: 4676652368672754045}
   - component: {fileID: 8908746896661856855}
+  - component: {fileID: 5586144864189594291}
+  - component: {fileID: 2951558420193233840}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -108,7 +110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703052843793511863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e905b6498b27404daed9d1aad257c30, type: 3}
   m_Name: 
@@ -132,6 +134,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  animator: {fileID: 5586144864189594291}
 --- !u!114 &4676652368672754045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +160,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d01bc8c48a66fa48819faa047643a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5586144864189594291
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703052843793511863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7dd90a67e28cd8041a4bd8f32216584c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2951558420193233840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703052843793511863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b625645a4c9fc4d94a8ddd483e5054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dead: 0
+  hpSlider: {fileID: 0}
+  maxHealth: 100
+  health: 100
+  damageAmount: 10
+  healAmount: 10
+  mpSlider: {fileID: 0}
+  maxMana: 100
+  mana: 100
+  castedMana: 10
+  regainMana: 10
+  regenMana: 3
