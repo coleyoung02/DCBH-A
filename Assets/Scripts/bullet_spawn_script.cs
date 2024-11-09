@@ -8,6 +8,11 @@ public class bullet_spawn_script : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.GetIsPaused())
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePosition = Input.mousePosition;
