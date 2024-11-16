@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private KeyCode pauseKey;
     [SerializeField] private GameObject pauseMenuUI; 
+    [SerializeField] private GameObject settingsMenuUI; 
     private static bool isPaused;
 
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -53,8 +55,15 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        isPaused = false;
         Debug.Log("To main menu");
         // TODO use SceneManager to load main menu scene
+    }
+
+    public void SettingsMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(true);
     }
 
     public static bool GetIsPaused()
