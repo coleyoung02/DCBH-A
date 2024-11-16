@@ -3049,6 +3049,14 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 512921533}
+    - target: {fileID: 5875876421093514120, guid: 7726bc6bab8ddb3409eecc1d67f66194, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3041337140516959188, guid: 461697fd0a8498f408c33d90b741db40, type: 3}
+    - target: {fileID: 5875876421093514120, guid: 7726bc6bab8ddb3409eecc1d67f66194, type: 3}
+      propertyPath: fireCooldown
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6581652715519909994, guid: 7726bc6bab8ddb3409eecc1d67f66194, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -3072,11 +3080,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.3
+      value: -50.4
       objectReference: {fileID: 0}
     - target: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.5
+      value: -32.5
       objectReference: {fileID: 0}
     - target: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_LocalPosition.z

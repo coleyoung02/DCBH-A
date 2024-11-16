@@ -11,7 +11,9 @@ public class Attack : MonoBehaviour, IBehaviour
 
     bool isActive = false;
     public bool IsActive => isActive;
-
+    [SerializeField] float fireCooldown;
+    float currentFireCooldown;
+    [SerializeField] GameObject bullet;
     [SerializeField] float _attackRange = 5f, _speed = 3f;
     [SerializeField] LayerMask ignore;
 
@@ -36,6 +38,11 @@ public class Attack : MonoBehaviour, IBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, direction); // Create a rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f); // Smoothly rotate
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        if(currentFireCooldown <= 0)
+        {
+            GameObject bullet_instance = Instantiate(bullet, this.transform.position, this.transform.rotation);
+            currentFireCooldown = fireCooldown;
+        }
     }
 
 
@@ -63,6 +70,9 @@ public class Attack : MonoBehaviour, IBehaviour
                 visual.localEulerAngles = Vector3.zero;
                 OnStateChanged.Invoke();
             }
+        }
+        if(currentFireCooldown > 0) {
+            currentFireCooldown -= Time.deltaTime;    
         }
     }
 }
