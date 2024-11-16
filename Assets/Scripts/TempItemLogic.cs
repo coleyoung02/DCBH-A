@@ -33,6 +33,11 @@ public class TempItemLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.GetIsPaused())
+        {
+            return;
+        }
+
         //checking for when the player presses the keys and performs the corresponding action
         if (Input.GetKeyDown("1"))
         {
