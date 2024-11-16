@@ -7,10 +7,10 @@ public class experience_and_level : MonoBehaviour
     public int level;
     public int experience_points;
     public List<int> xpPerLevel;
-    [ContextMenu("Add 50 Experience")]
+    [ContextMenu("Add 30 Experience")]
     public void add_xp_demo()
     {
-        AddExperience(30); // Example: Add 50 XP
+        AddExperience(30);
     }
 
     [ContextMenu("Init")]
