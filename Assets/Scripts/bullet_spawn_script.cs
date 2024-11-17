@@ -8,7 +8,7 @@ public class bullet_spawn_script : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.GetIsPaused())
+        if (!GameManager.EnablePlayerInput)
         {
             return;
         }

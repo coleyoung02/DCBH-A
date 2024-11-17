@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /* NOTE to UI people if you want to animate the pause menu
-remember to add the animator to the paseMenuUI object and change
+remember to add the animator to the pauseMenuUI object and change
 the 'Update Mode' to 'Unscaled Time' or else animations will not work
 */
 public class PauseMenu : MonoBehaviour
@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        GameManager.EnablePlayerInput = false;
     }
 
     public void ResumeGame()
@@ -45,6 +46,7 @@ public class PauseMenu : MonoBehaviour
         settingsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        GameManager.EnablePlayerInput = true;
     }
 
     public void QuitGame()

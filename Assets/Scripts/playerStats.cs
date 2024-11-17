@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.GetIsPaused())
+        if (!GameManager.EnablePlayerInput)
         {
             return;
         }
