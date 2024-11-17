@@ -23,6 +23,11 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.EnablePlayerInput)
+        {
+            return;
+        }
+
         //cooldown countdown
         if (dashCooldownTime > 0)
         {
