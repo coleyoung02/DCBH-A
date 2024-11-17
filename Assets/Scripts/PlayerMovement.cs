@@ -50,7 +50,6 @@ public class NewBehaviourScript : MonoBehaviour
 
         Vector3 pos = transform.position;
 
-        // Movement
         if (Input.GetKey("w"))
         {
             pos.y += currentSpeed * Time.deltaTime;
