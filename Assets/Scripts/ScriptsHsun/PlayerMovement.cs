@@ -4,37 +4,84 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public float speed = 10.4f;
+    [SerializeField] private float speed;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashDuration;
+    [SerializeField] private float dashCooldown;
 
-    // Start is called before the first frame update
+    private float dashTime;
+    private float dashCooldownTime;
+    private bool isDashing;
+    private Rigidbody2D rb;
+
     void Start()
     {
-        
+        dashTime = 0;
+        dashCooldownTime = 0;
+        isDashing = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
+        //cooldown countdown
+        if (dashCooldownTime > 0)
+        {
+            dashCooldownTime -= Time.deltaTime;
+        }
 
+        // Start dash if LeftShift is pressed and cooldown has finished
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0)
+        {
+            isDashing = true;
+            dashTime = dashDuration;
+            dashCooldownTime = dashCooldown;
+        }
+
+        // Set movement speed based on dash state lol had to gpt this 
+        float currentSpeed;
+        if (isDashing)
+        {
+            currentSpeed = dashSpeed;
+        }
+        else
+        {
+            currentSpeed = speed;
+        }
+        //float currentSpeed = isDashing ? dashSpeed : speed; apparently this also works cuz its a simplified if-else statement
+
+
+        // Calculate movement direction
+        Vector2 movement = Vector2.zero;
         if (Input.GetKey("w"))
         {
-            pos.y += speed * Time.deltaTime;
+            movement.y += 1;
         }
         if (Input.GetKey("s"))
         {
-            pos.y -= speed * Time.deltaTime;
+            movement.y -= 1;
         }
         if (Input.GetKey("d"))
         {
-            pos.x += speed * Time.deltaTime;
+            movement.x += 1;
         }
         if (Input.GetKey("a"))
         {
-            pos.x -= speed * Time.deltaTime;
+            movement.x -= 1;
         }
 
-        transform.position = pos;
+        // Apply velocity to Rigidbody2D
+        rb.velocity = movement.normalized * currentSpeed;
 
+        // Dash duration countdown
+        if (isDashing)
+        {
+            dashTime -= Time.deltaTime;
+            if (dashTime <= 0)
+            {
+                isDashing = false;
+            }
+        }
     }
 }
+

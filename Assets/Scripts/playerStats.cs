@@ -46,6 +46,11 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.GetIsPaused())
+        {
+            return;
+        }
+
         if (!dead)
         {
             HealthCode();

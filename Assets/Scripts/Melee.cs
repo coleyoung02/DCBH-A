@@ -10,6 +10,7 @@ public class Melee : MonoBehaviour
     [SerializeField] private float weaponDamage;
     [SerializeField] private GameObject weapon;
     [SerializeField] private ContactFilter2D enemyFilter;
+    [SerializeField] private Animator animator;
 
     private Collider2D weaponCollider;
     private List<Collider2D> hitEnemies;
@@ -20,12 +21,17 @@ public class Melee : MonoBehaviour
     {
         nextAttackTime = 0f;
         weaponCollider = weapon.GetComponent<Collider2D>();
-        List<Collider2D> hitEnemies = new List<Collider2D>();
+        hitEnemies = new List<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.GetIsPaused())
+        {
+            return;
+        }
+
         // Attack every weaponSpeed seconds when holding down attack hotkey
         if (Input.GetKey(attackHotkey) && Time.time >= nextAttackTime)
         {
@@ -43,12 +49,14 @@ public class Melee : MonoBehaviour
         float zRot = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, zRot);
 
+        // Play an animation for the weapon
+        animator.SetTrigger("Melee_Attack");
+
         Physics2D.OverlapCollider(weaponCollider, enemyFilter, hitEnemies);
 
         foreach (Collider2D enemy in hitEnemies)
         {
             // TODO add in proper enemy function when that is implemented
         }
-        // TODO Play an animation for the weapon
     }
 }
