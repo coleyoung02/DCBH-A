@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
             return;
         }
 
-        roomManager.ChangeRoom(attachedRoom, linkedDoor.attachedRoom, linkedDoor, exitLocation);
+        roomManager.ChangeRoom(attachedRoom, linkedDoor.attachedRoom, linkedDoor, linkedDoor.exitLocation);
     }
 
 }
