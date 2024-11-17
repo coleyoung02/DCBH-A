@@ -53,7 +53,7 @@ public class TempItemLogic : MonoBehaviour
         
     }
 
-    public static void UseHealthPotion()
+    static void UseHealthPotion()
     {
         //simply adds to the players health. Again, specific numbers are placeholders. 
         playerHealth += 25;
@@ -68,7 +68,7 @@ public class TempItemLogic : MonoBehaviour
         Debug.Log("playerHealth = " + playerHealth);
     }
 
-    public static void UseManaPotion()
+    static void UseManaPotion()
     {
         //simply adds to the players mana. Again, specific numbers are placeholders. 
         playerMana += 10;
@@ -84,14 +84,19 @@ public class TempItemLogic : MonoBehaviour
     }
 
     //The last two methods are just placeholders for the purposes of testing if the "perform action" logic is working
-    public static void CastFireball()
+    static void CastFireball()
     {
         playerMana -= 10;
         Debug.Log("Fireball!!!!! You have " + playerMana + " mana left.");
     }
 
-    public static void ThrowMolotov()
+    static void ThrowMolotov()
     {
         Debug.Log("YEAHHHHH FIRE BABY WOOOOOO!!!");
+    }
+
+    static void HealSpell()
+    {
+
     }
 }
