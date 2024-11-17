@@ -6,13 +6,13 @@ using UnityEngine.UIElements;
 public class EnemySpawn : MonoBehaviour
 {   
     //Establish which enemies should be spawned in the editor
-    public GameObject[] enemies;
+    [SerializeField] private GameObject[] enemies;
 
 
     //Pre-determined spawn points set in the editor 
-    public List<Vector2> spawnPoints;
+    [SerializeField] private List<Vector2> spawnPoints;
 
-    private List<Vector2> patrolPoints;
+    [SerializeField] private List<Vector2> patrolPoints;
 
 
 
