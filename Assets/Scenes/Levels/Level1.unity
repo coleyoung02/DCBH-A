@@ -191,11 +191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 836689031605701507, guid: 800723c803da09f4ab864d84d7486701, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.22
+      value: -33.74
       objectReference: {fileID: 0}
     - target: {fileID: 836689031605701507, guid: 800723c803da09f4ab864d84d7486701, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.53
+      value: 5.27
       objectReference: {fileID: 0}
     - target: {fileID: 1710447646542166008, guid: 800723c803da09f4ab864d84d7486701, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6503,11 +6503,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3663609138615324897, guid: 800723c803da09f4ab864d84d7486701, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3663609138615324897, guid: 800723c803da09f4ab864d84d7486701, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3663609138615324897, guid: 800723c803da09f4ab864d84d7486701, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
