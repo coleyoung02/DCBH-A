@@ -439,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.1
+      value: 20.06
       objectReference: {fileID: 0}
     - target: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_LocalPosition.z
@@ -483,11 +483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: dashSpeed
-      value: 48
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: moveSpeed
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: dashCooldown
@@ -497,6 +497,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7dd90a67e28cd8041a4bd8f32216584c, type: 2}
+    - target: {fileID: 6887503184854128779, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: m_Radius
+      value: 0.9187641
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887503184854128779, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.010876894
+      objectReference: {fileID: 0}
     - target: {fileID: 7855695586856556505, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_Sprite
       value: 
