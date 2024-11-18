@@ -481,6 +481,14 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: dashSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: dashCooldown
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5586144864189594291, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_Controller
       value: 
@@ -504,6 +512,10 @@ PrefabInstance:
     - target: {fileID: 7855695586856556505, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954637358992079822, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8954637358992079822, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_Constraints
