@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class VisualUpdate : MonoBehaviour
 {
     // Start is called before the first frame update
     float velocity;
-    NavMesh navmesh;
-    GameObject parent;
+    NavMeshAgent navMesh;
+    GameObject parentObject;
     SpriteRenderer spriteRenderer;
     void Start()
     {
@@ -21,7 +23,9 @@ public class VisualUpdate : MonoBehaviour
     void Update()
     {
         this.transform.rotation = Quaternion.identity;
-        velocity = agent.velocity.x;
+        //Fix the next section
+        velocity = navMesh.velocity.x;
+        UnityEngine.Debug.Log(velocity);
         if ((velocity>0 && spriteRenderer.flipX) || (velocity < 0 && !spriteRenderer.flipX))
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;
