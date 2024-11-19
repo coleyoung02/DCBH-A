@@ -413,6 +413,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
   m_PrefabInstance: {fileID: 1745918910}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1607608246 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5586144864189594291, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+  m_PrefabInstance: {fileID: 1745918910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1745918910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,6 +486,10 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1607608246}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: dashSpeed
       value: 120
