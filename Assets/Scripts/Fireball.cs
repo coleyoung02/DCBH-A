@@ -47,7 +47,7 @@ public class Fireball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TestEnemy>().enemyHealth -= 50;
+            collision.gameObject.GetComponent<Enemy>().enemyHealth -= 50;
         }
 
         Land();

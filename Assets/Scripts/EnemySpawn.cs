@@ -35,7 +35,7 @@ public class EnemySpawn : MonoBehaviour
             //choose a random patrol point to give to the enemy, updating a variable in the enemy controller script
             //For now im using TestEnemy as a placeholder but this will update in our enemy controller script later
             int whichPatPoint = Random.Range(0, patrolPoints.Count);
-            enemies[i].GetComponent<TestEnemy>().patrolPoint1 = patrolPoints[whichPatPoint];
+            enemies[i].GetComponent<Enemy>().patrolPoint1 = patrolPoints[whichPatPoint];
 
             //ensure no duplicate spawn points and patrol points
             spawnPoints.Remove(spawnPoints[whichPoint]);

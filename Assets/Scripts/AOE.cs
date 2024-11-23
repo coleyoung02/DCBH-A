@@ -26,7 +26,7 @@ public class AOE : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             // Apply damage over time to enemies in the area
-            other.GetComponent<TestEnemy>().TakeDamage(damagePerSecond * Time.deltaTime);
+            other.GetComponent<Enemy>().TakeDamage(damagePerSecond * Time.deltaTime);
         }
     }
 }
