@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private KeyCode pauseKey;
     [SerializeField] private GameObject pauseMenuUI; 
     [SerializeField] private GameObject settingsMenuUI; 
+    [SerializeField] private GameObject controlsMenuUI; 
     private static bool isPaused;
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
+        controlsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
         GameManager.EnablePlayerInput = true;
@@ -66,6 +68,12 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(true);
+    }
+
+    public void ControlsMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        controlsMenuUI.SetActive(true);
     }
 
     public static bool GetIsPaused()
