@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashDuration = 0.2f;
     public float dashCooldown = 1f;
 
+    private Animator animator;
     private Rigidbody2D rb2d;
     private Vector2 moveDirection;
     private bool isDashing = false;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         // Get the Rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
 
@@ -67,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Dash movement
             rb2d.MovePosition(rb2d.position + moveDirection * dashSpeed * Time.fixedDeltaTime);
+            animator.SetFloat("XSpeed", dashSpeed * moveDirection.x);
             if (Time.time >= dashTime)
             {
                 isDashing = false;
@@ -77,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Regular movement
             rb2d.MovePosition(rb2d.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+            animator.SetFloat("XSpeed", moveSpeed * moveDirection.x);
         }
     }
 }
