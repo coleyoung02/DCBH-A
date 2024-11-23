@@ -74,11 +74,11 @@ public class PlayerMovement : MonoBehaviour
         {
             // Dash movement
             rb2d.MovePosition(rb2d.position + moveDirection * dashSpeed * Time.fixedDeltaTime);
-            animator.SetBool("Dash", true);
+            animator.SetBool("isDashing", true);
             if (Time.time >= dashTime)
             {
                 isDashing = false;
-                animator.SetBool("Dash", false);
+                animator.SetBool("isDashing", false);
                 //Debug.Log("Dash ended");
             }
         }
