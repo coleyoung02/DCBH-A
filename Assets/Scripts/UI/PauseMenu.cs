@@ -58,10 +58,8 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        Time.timeScale = 1f;
-        isPaused = false;
-        Debug.Log("To main menu");
-        // TODO use SceneManager to load main menu scene
+        ResumeGame();
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
     public void SettingsMenu()
