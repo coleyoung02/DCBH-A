@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1681770814679804166
+--- !u!1 &6581652715519909994
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6586056747461996900}
-  - component: {fileID: 446718180971054536}
-  - component: {fileID: 2880359155528894436}
-  - component: {fileID: 2360878627129738020}
-  - component: {fileID: 3345390095043952077}
+  - component: {fileID: 3955673911932136748}
+  - component: {fileID: 1266844238599012791}
+  - component: {fileID: 1393663930832999048}
+  - component: {fileID: 4228824775615660668}
+  - component: {fileID: 7908154624989449792}
+  - component: {fileID: 5742129380509065074}
+  - component: {fileID: 3130128454123300206}
+  - component: {fileID: 5875876421093514120}
   m_Layer: 0
-  m_Name: AOE
+  m_Name: OldEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6586056747461996900
+--- !u!4 &3955673911932136748
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681770814679804166}
+  m_GameObject: {fileID: 6581652715519909994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.067055, y: 0.2346543, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 7.1, y: -0.13, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &446718180971054536
+--- !u!212 &1266844238599012791
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681770814679804166}
+  m_GameObject: {fileID: 6581652715519909994}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9481132, g: 0.55697894, b: 0.03577783, a: 1}
+  m_Color: {r: 0.8238993, g: 0.27584484, b: 0.26686034, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,27 +90,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2880359155528894436
-MonoBehaviour:
+--- !u!195 &1393663930832999048
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681770814679804166}
+  m_GameObject: {fileID: 6581652715519909994}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c4b7853565f4ae448ef10fa2124cd06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagePerSecond: 10
-  duration: 10
---- !u!58 &2360878627129738020
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 12
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.1
+  m_BaseOffset: -0.075
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
+--- !u!58 &4228824775615660668
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681770814679804166}
+  m_GameObject: {fileID: 6581652715519909994}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -130,36 +141,73 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.21133333}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &3345390095043952077
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &7908154624989449792
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681770814679804166}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
+  m_GameObject: {fileID: 6581652715519909994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7272c4b615c1124198376f6d428604c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5742129380509065074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581652715519909994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6931d0e7e3a8f8947a35d2685310736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  _speed: 12
+--- !u!114 &3130128454123300206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581652715519909994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a00d6df15675684586fbc63ea473fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 20
+  ignore:
     serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
+    m_Bits: 64
+  distance: 100
+  angle: 30
+  sees: {fileID: 0}
+--- !u!114 &5875876421093514120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581652715519909994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcac2b8a03f1c94380606a7fc75a158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackRange: 40
+  _speed: 0
+  ignore:
     serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+    m_Bits: 64
