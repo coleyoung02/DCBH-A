@@ -10,12 +10,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5569942691767975856, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
       propertyPath: m_Name
-      value: EnemyPink
+      value: EnemyPinkSlime
       objectReference: {fileID: 0}
     - target: {fileID: 6699696264264643478, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 25172456, guid: 0e734f19ff3ca1b4993b14dcad6486c5, type: 3}
+    - target: {fileID: 6924870698863883450, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924870698863883450, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6924870698863883450, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
