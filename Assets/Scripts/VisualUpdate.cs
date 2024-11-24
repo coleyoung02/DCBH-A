@@ -25,7 +25,7 @@ public class VisualUpdate : MonoBehaviour
         this.transform.rotation = Quaternion.identity;
         //Fix the next section
         velocity = navMesh.velocity.x;
-        UnityEngine.Debug.Log(velocity);
+        //UnityEngine.Debug.Log(velocity);
         if ((velocity>0 && spriteRenderer.flipX) || (velocity < 0 && !spriteRenderer.flipX))
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;

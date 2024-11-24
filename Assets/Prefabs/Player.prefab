@@ -15,10 +15,9 @@ GameObject:
   - component: {fileID: 9034438917679787931}
   - component: {fileID: 6082539606930091478}
   - component: {fileID: 4676652368672754045}
-  - component: {fileID: 8908746896661856855}
   - component: {fileID: 5586144864189594291}
   - component: {fileID: 2951558420193233840}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -35,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.47, y: 0.16, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.49371064, g: 0.66733295, b: 1, a: 1}
+  m_Sprite: {fileID: -2073402042, guid: 183844669e5474f4a99eee0f52c08a30, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,10 +114,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 4
 --- !u!58 &6887503184854128779
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,9 +150,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.010876894}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.9187641
 --- !u!114 &9034438917679787931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,22 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d789f1224818e4408a655ff5be89f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10.4
-  dashSpeed: 20
+  moveSpeed: 50
+  dashSpeed: 120
   dashDuration: 0.2
-  dashCooldown: 1
---- !u!114 &8908746896661856855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703052843793511863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d01bc8c48a66fa48819faa047643a7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  dashCooldown: 0.1
 --- !u!95 &5586144864189594291
 Animator:
   serializedVersion: 5
@@ -266,5 +253,5 @@ MonoBehaviour:
   castedMana: 10
   regainMana: 10
   regenMana: 3
-  molotovPrefab: {fileID: 0}
-  fireballPrefab: {fileID: 0}
+  molotovPrefab: {fileID: 1759829037096974139, guid: 173e5e4c9a0ecbf4797d2de1c7534997, type: 3}
+  fireballPrefab: {fileID: 2438910418849767314, guid: 3dbf97b95ab8f074981ef4b89ea65d7e, type: 3}
