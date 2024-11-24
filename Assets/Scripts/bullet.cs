@@ -9,7 +9,9 @@ public class Bullet : MonoBehaviour
 
     public void SetDirection(Vector3 direction)
     {
-        moveDirection = direction.normalized;
+        moveDirection = direction;
+        moveDirection.z = 0;
+        moveDirection = moveDirection.normalized;
     }
 
     void Update()
@@ -21,12 +23,5 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag != "Player")
-        {
-            Destroy(gameObject);
-
-        }
-    }
+    
 }

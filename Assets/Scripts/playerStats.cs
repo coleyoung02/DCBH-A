@@ -79,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if (Input.GetKeyDown("3"))
         {
+            Debug.Log("Input detected");
             actions[3]();
         }
         if (Input.GetKeyDown("4"))
@@ -150,6 +151,7 @@ public class PlayerHealth : MonoBehaviour
     //The last two methods are just placeholders for the purposes of testing if the "perform action" logic is working
     void CastFireball()
     {
+        Debug.Log("Fireball is shot");
         if(mana > 25)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -209,7 +211,7 @@ public class PlayerHealth : MonoBehaviour
         {
             IFrames = true;
             health -= 15;
-            collision.gameObject.GetComponent<TestEnemy>().enemyHealth -= 15;
+            collision.gameObject.GetComponent<Enemy>().enemyHealth -= 15;
         }
     }
 

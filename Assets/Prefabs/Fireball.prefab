@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5778244793895780784}
   - component: {fileID: 7052968220129092294}
   - component: {fileID: 2417006193518542011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 39.529137, y: 2.2791371, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9764151, g: 0.6024683, b: 0.1289605, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1780c6ea2285a3c4fafa3d011a923c05, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae345ee4ad5db44ea85b7691f63d8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 25
   maxDistance: 50
 --- !u!50 &7052968220129092294
 Rigidbody2D:
@@ -160,6 +160,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.16, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25

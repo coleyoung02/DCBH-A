@@ -45,7 +45,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveDirection.magnitude > 0)
         {
+            animator.SetBool("isMoving", true);
             //Debug.Log("Movement detected: " + moveDirection);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
 
         // Handle dashing
@@ -69,10 +74,11 @@ public class PlayerMovement : MonoBehaviour
         {
             // Dash movement
             rb2d.MovePosition(rb2d.position + moveDirection * dashSpeed * Time.fixedDeltaTime);
-            animator.SetFloat("XSpeed", dashSpeed * moveDirection.x);
+            animator.SetBool("isDashing", true);
             if (Time.time >= dashTime)
             {
                 isDashing = false;
+                animator.SetBool("isDashing", false);
                 //Debug.Log("Dash ended");
             }
         }
@@ -80,7 +86,11 @@ public class PlayerMovement : MonoBehaviour
         {
             // Regular movement
             rb2d.MovePosition(rb2d.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
-            animator.SetFloat("XSpeed", moveSpeed * moveDirection.x);
+        }
+
+        if (moveDirection.x != 0)
+        {
+            animator.SetFloat("XDirection", moveDirection.x);
         }
     }
 }
