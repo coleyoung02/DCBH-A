@@ -214,4 +214,9 @@ public class PlayerHealth : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().enemyHealth -= 15;
         }
     }
+
+    public void takeDamage(int dmg)
+    {
+        health -= dmg;
+    }
 }
