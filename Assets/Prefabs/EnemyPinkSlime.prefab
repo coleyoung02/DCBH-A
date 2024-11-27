@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1423750065177146419, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423750065177146419, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3041337140516959188, guid: 461697fd0a8498f408c33d90b741db40, type: 3}
+    - target: {fileID: 1423750065177146419, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
+      propertyPath: fireCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5569942691767975856, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
       propertyPath: m_Name
-      value: EnemyPink
+      value: EnemyPinkSlime
       objectReference: {fileID: 0}
     - target: {fileID: 6699696264264643478, guid: 7740bac2ea3925740aa534c5da839e2c, type: 3}
       propertyPath: m_Sprite

@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("take dmg");
         enemyHealth -= damage;
         healthBar.UpdateHealthBar(enemyHealth, enemyMaxHealth);
     }
@@ -42,8 +43,10 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        Debug.Log(collision.gameObject.tag);
+        if(collision.gameObject.tag == "Projectile")
         {
+            
             TakeDamage(5);
         }
     }

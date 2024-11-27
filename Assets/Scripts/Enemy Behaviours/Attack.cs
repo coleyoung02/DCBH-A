@@ -31,6 +31,7 @@ public class Attack : MonoBehaviour, IBehaviour
     }
     public void Tick()
     {
+        UnityEngine.Debug.Log(currentFireCooldown);
         navMesh.speed = _speed;
         navMesh.destination = _target.position + (transform.position-_target.position).normalized*2f;
 
@@ -38,10 +39,12 @@ public class Attack : MonoBehaviour, IBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, direction); // Create a rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f); // Smoothly rotate
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        if(currentFireCooldown <= 0)
+        UnityEngine.Debug.Log(currentFireCooldown);
+        if (currentFireCooldown <= 0)
         {
             GameObject bullet_instance = Instantiate(bullet, this.transform.position, this.transform.rotation);
             currentFireCooldown = fireCooldown;
+            UnityEngine.Debug.Log("fire");
         }
     }
 
