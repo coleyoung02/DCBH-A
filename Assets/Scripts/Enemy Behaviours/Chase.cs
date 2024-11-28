@@ -25,11 +25,14 @@ public class Chase : MonoBehaviour, IBehaviour
     public float angle;
     public Transform sees;
     private GameObject player;
+    private Animator animator;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         visual = this.transform;
         player = GameObject.FindWithTag("Player");
+        animator = GetComponentInChildren<Animator>();
     }
     public void Tick()
     {
@@ -41,10 +44,14 @@ public class Chase : MonoBehaviour, IBehaviour
         if (navMeshAgent.velocity.magnitude > 0.1f) // A small threshold to avoid jitter
         {
             // Calculate the rotation needed to face the movement direction
-
+            animator.SetBool("isMoving", true);
             Vector3 direction = navMeshAgent.velocity.normalized; // Get the direction of movement
             Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, direction); // Create a rotation
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f); // Smoothly rotate
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
