@@ -34,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
     //to equip their actions but for now it is hardcoded for simplicity
     private Dictionary<int, Action> actions = new Dictionary<int, Action>();
 
+    private Animator animator;
+
   
     void Start() 
     {
@@ -42,6 +44,8 @@ public class PlayerHealth : MonoBehaviour
         actions.Add(2, UseManaPotion);
         actions.Add(3, CastFireball);
         actions.Add(4, ThrowMolotov);
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -154,6 +158,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Fireball is shot");
         if(mana > 25)
         {
+            animator.SetTrigger("Cast");
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f;
 
@@ -172,6 +177,7 @@ public class PlayerHealth : MonoBehaviour
      void ThrowMolotov()
     {
         if (molotovCount > 0) {
+            animator.SetTrigger("Throw");
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f;
 
