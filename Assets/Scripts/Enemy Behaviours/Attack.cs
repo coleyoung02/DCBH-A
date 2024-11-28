@@ -21,6 +21,7 @@ public class Attack : MonoBehaviour, IBehaviour
     Transform visual;
     Chase chase;
     NavMeshAgent navMesh;
+    Animator animator;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class Attack : MonoBehaviour, IBehaviour
         visual = this.transform;
         _target = GameObject.FindWithTag("Player").transform;
         chase = GetComponent<Chase>();
+        animator = GetComponentInChildren<Animator>();
     }
     public void Tick()
     {
@@ -42,6 +44,7 @@ public class Attack : MonoBehaviour, IBehaviour
         UnityEngine.Debug.Log(currentFireCooldown);
         if (currentFireCooldown <= 0)
         {
+            animator.SetTrigger("Attack");
             GameObject bullet_instance = Instantiate(bullet, this.transform.position, this.transform.rotation);
             currentFireCooldown = fireCooldown;
             UnityEngine.Debug.Log("fire");
