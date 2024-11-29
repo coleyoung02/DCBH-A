@@ -2089,11 +2089,11 @@ PrefabInstance:
       objectReference: {fileID: 1607608246}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: dashSpeed
-      value: 48
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: moveSpeed
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: dashCooldown
@@ -2103,6 +2103,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7dd90a67e28cd8041a4bd8f32216584c, type: 2}
+    - target: {fileID: 6082539606930091478, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7855695586856556505, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_Sprite
       value: 
