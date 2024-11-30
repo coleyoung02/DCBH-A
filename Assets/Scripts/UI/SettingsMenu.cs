@@ -84,7 +84,6 @@ public class SettingsMenu : MonoBehaviour
 
     public void setFullscreen(Int32 index)
     {
-        Debug.Log(index);
         if (index == 0)
         {
             Screen.fullScreen = false;
@@ -93,7 +92,5 @@ public class SettingsMenu : MonoBehaviour
         {
             Screen.fullScreen = true;
         }
-
-        Debug.Log(Screen.fullScreen);
     }
 }
