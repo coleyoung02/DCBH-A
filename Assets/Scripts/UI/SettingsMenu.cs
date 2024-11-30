@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -10,21 +11,37 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private HorizontalSelector displaySelector;
     [SerializeField] private HorizontalSelector resolutionSelector;
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private TMP_Text volumePercent;
     private Resolution[] resolutions;
+    private float volume;
     
     // Start is called before the first frame update
     void Start()
     {
         resolutions = Screen.resolutions;
+        audioMixer.GetFloat("Volume", out volume);
         UpdateResolutionOptions();
         UpdateDisplayOptions();
     }
 
     public void SetVolume(float value)
     {
+        volume = value;
         audioMixer.SetFloat("Volume", value);
+        volumePercent.text = ((int) (value * 100)).ToString() + "%";
     }
 
+    public void MuteAudio(bool doMute)
+    {
+        if (doMute)
+        {
+            audioMixer.SetFloat("Volume", 0);
+        }
+        else
+        {
+            audioMixer.SetFloat("Volume", volume);
+        }
+    }
     public void UpdateResolutionOptions()
     {
         int selectedResolutionIndex = 0;
