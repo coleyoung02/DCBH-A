@@ -40,25 +40,23 @@ public class PlayerHealth : MonoBehaviour
     void Start() 
     {
         //despacito
-        actions.Add(1, UseHealthPotion);
-        actions.Add(2, UseManaPotion);
-        actions.Add(3, CastFireball);
-        actions.Add(4, ThrowMolotov);
+        
+        actions.Add(1, CastFireball);
+        actions.Add(2, ThrowMolotov);
 
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if(health <= 0)
+        {
+            dead = true;
+            gameObject.SetActive(false);
+        }
         if (!GameManager.EnablePlayerInput)
         {
             return;
-        }
-
-        if (!dead)
-        {
-            HealthCode();
-            ManaCode();
         }
         if (IFrames)
         {
@@ -81,63 +79,63 @@ public class PlayerHealth : MonoBehaviour
         {
             actions[2]();
         }
-        if (Input.GetKeyDown("3"))
-        {
-            Debug.Log("Input detected");
-            actions[3]();
-        }
-        if (Input.GetKeyDown("4"))
-        {
-            actions[4]();
-        }
+        //if (Input.GetKeyDown("3"))
+        //{
+        //    Debug.Log("Input detected");
+        //    actions[3]();
+        //}
+        //if (Input.GetKeyDown("4"))
+        //{
+        //    actions[4]();
+        //}
     }
-    void ManaCode()
-    {
-        //mpSlider.value = mana;
+    //void ManaCode()
+    //{
+    //    //mpSlider.value = mana;
 
-        if (mana > maxMana)
-        {
-            mana = maxMana;
-        }
-        if (Input.GetKeyDown(KeyCode.E) && mana > castedMana)
-        {
-            mana -= castedMana;
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            mana += regainMana;
-        }
-        // regen
-        if (mana < maxMana)
-        {
-            mana += regenMana * Time.deltaTime;
-        }
-    }
+    //    if (mana > maxMana)
+    //    {
+    //        mana = maxMana;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.E) && mana > castedMana)
+    //    {
+    //        mana -= castedMana;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        mana += regainMana;
+    //    }
+    //    // regen
+    //    if (mana < maxMana)
+    //    {
+    //        mana += regenMana * Time.deltaTime;
+    //    }
+    //}
 
-    void HealthCode()
-    {
-       // hpSlider.value = health;
+    //void HealthCode()
+    //{
+    //   // hpSlider.value = health;
 
-        if (health <= 0)
-        {
-            dead = true;
-        }
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            heal(healAmount);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            damage(damageAmount);
-        }
+    //    if (health <= 0)
+    //    {
+    //        dead = true;
+    //    }
+    //    if (health > maxHealth)
+    //    {
+    //        health = maxHealth;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.A))
+    //    {
+    //        heal(healAmount);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.D))
+    //    {
+    //        damage(damageAmount);
+    //    }
 
-        void heal(int healAmount) { health += healAmount; }
-        void damage(int damage) { health -= damage; }
-    }
+    //    void heal(int healAmount) { health += healAmount; }
+    //    void damage(int damage) { health -= damage; }
+    //}
     void UseManaPotion()
     {
         //adds to the players mana. Again, specific numbers are placeholders. 
@@ -162,7 +160,8 @@ public class PlayerHealth : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f;
 
-            GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+            GameObject fireball = Instantiate(fireballPrefab, transform.position,Quaternion.Euler(new Vector3(0, 0, 0)));
+
             fireball.GetComponent<Fireball>().Initialize(mousePosition);
             mana -= 25;
         }
@@ -217,7 +216,7 @@ public class PlayerHealth : MonoBehaviour
         {
             IFrames = true;
             health -= 15;
-            collision.gameObject.GetComponent<Enemy>().enemyHealth -= 15;
+            
         }
     }
 
