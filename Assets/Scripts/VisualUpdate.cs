@@ -41,6 +41,8 @@ public class VisualUpdate : MonoBehaviour
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
+        this.transform.rotation = Quaternion.identity;
+
 
     }
 }
