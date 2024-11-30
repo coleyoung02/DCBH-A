@@ -221,9 +221,9 @@ GameObject:
   - component: {fileID: 8821988347021638522}
   - component: {fileID: 1213796514242519771}
   - component: {fileID: 4075001630369491940}
+  - component: {fileID: 5418004437358936818}
   - component: {fileID: 3453955867380960019}
   - component: {fileID: 1423750065177146419}
-  - component: {fileID: 5418004437358936818}
   - component: {fileID: 3680593700806123130}
   m_Layer: 0
   m_Name: Enemy 1
@@ -370,6 +370,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7272c4b615c1124198376f6d428604c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5418004437358936818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569942691767975856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6931d0e7e3a8f8947a35d2685310736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  _speed: 12
 --- !u!114 &3453955867380960019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,22 +424,6 @@ MonoBehaviour:
   ignore:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &5418004437358936818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5569942691767975856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6931d0e7e3a8f8947a35d2685310736a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  _speed: 12
 --- !u!114 &3680593700806123130
 MonoBehaviour:
   m_ObjectHideFlags: 0
