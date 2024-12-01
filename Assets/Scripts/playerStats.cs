@@ -126,15 +126,16 @@ public class PlayerHealth : MonoBehaviour
         {
             health = maxHealth;
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            heal(healAmount);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            damage(damageAmount);
-        }
-
+        
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    heal(healAmount);
+        //}
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    damage(damageAmount);
+        //}
+        
         void heal(int healAmount) { health += healAmount; }
         void damage(int damage) { health -= damage; }
     }
