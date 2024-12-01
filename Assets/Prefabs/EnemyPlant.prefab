@@ -296,8 +296,8 @@ GameObject:
   - component: {fileID: 7787193076916032401}
   - component: {fileID: 4919267539561863854}
   - component: {fileID: 4033380232189408184}
-  - component: {fileID: 8001703034678461817}
   - component: {fileID: 5991763499517229657}
+  - component: {fileID: 8001703034678461817}
   - component: {fileID: 5755028438497406768}
   m_Layer: 6
   m_Name: EnemyPlant
@@ -459,26 +459,7 @@ MonoBehaviour:
   _patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
-  _speed: 12
---- !u!114 &8001703034678461817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3568406688025448186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbcac2b8a03f1c94380606a7fc75a158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireCooldown: 0
-  bullet: {fileID: 0}
-  _attackRange: 40
   _speed: 0
-  ignore:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &5991763499517229657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +479,25 @@ MonoBehaviour:
   distance: 100
   angle: 30
   sees: {fileID: 0}
+--- !u!114 &8001703034678461817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3568406688025448186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcac2b8a03f1c94380606a7fc75a158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireCooldown: 0
+  bullet: {fileID: 0}
+  _attackRange: 120
+  _speed: 0
+  ignore:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &5755028438497406768
 MonoBehaviour:
   m_ObjectHideFlags: 0
