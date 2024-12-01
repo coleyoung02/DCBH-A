@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
         Debug.Log("WHAT THE HELL");
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().enemyHealth -= 5;
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(5);
 
         }
         Destroy(gameObject);
