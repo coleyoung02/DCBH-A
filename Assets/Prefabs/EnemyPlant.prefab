@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6012945257119634895}
   - component: {fileID: 6969172926303676445}
   - component: {fileID: 5995565866534283000}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 187091788715524143}
   - component: {fileID: 5175001314713365223}
   - component: {fileID: 8949532391637736069}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 5713680251680119818}
   - component: {fileID: 2237467471128248827}
   - component: {fileID: 6517880261354067015}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 8001703034678461817}
   - component: {fileID: 5991763499517229657}
   - component: {fileID: 5755028438497406768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyPlant
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1096798520620108789}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 6530958875521557186}
   - component: {fileID: 7608849365858839398}
   - component: {fileID: 2749151828289888942}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 2320468603524023004}
   - component: {fileID: 3335553672489932284}
   - component: {fileID: 1326630836573093448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
