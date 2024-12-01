@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5764121333947463247}
   - component: {fileID: 4722011368474829167}
   - component: {fileID: 6608859734792833450}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 3850314109650916945}
   - component: {fileID: 456446968902164469}
   - component: {fileID: 5326424872490554941}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 2343738623981103257}
   - component: {fileID: 8124675120155866472}
   - component: {fileID: 3871294294082281684}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 7878236981850240188}
   - component: {fileID: 2890462626396249716}
   - component: {fileID: 1440747801178025494}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6986539081512730470}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 55858167730647530}
   - component: {fileID: 4389519931435077322}
   - component: {fileID: 2310425676331080611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemySlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 4377487759895634268}
   - component: {fileID: 1115425877133810830}
   - component: {fileID: 4393603749813473899}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
