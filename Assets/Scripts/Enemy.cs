@@ -40,14 +40,5 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.tag);
-        if(collision.gameObject.tag == "Projectile")
-        {
-            
-            TakeDamage(5);
-        }
-    }
+    
 }

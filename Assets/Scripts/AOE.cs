@@ -16,10 +16,7 @@ public class AOE : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
-        {
-            Debug.Log("testing1234");
-        }
+        
     }
     void OnTriggerStay2D(Collider2D other)
     {
