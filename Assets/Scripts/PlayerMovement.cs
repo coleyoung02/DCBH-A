@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rb2d;
-    [SerializeField] private AudioSource audioSource;
     private Vector2 moveDirection;
     private bool isDashing = false;
     private float dashTime;
@@ -52,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isMoving", true);
             if(stepping == false)
             {
-                audioSource.Play();
                 stepping = true;
 
             }
@@ -60,9 +58,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            audioSource.Pause();
-            stepping = false;
             animator.SetBool("isMoving", false);
+            stepping = false;
         }
 
         // Handle dashing
