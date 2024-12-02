@@ -6,7 +6,7 @@ public class bullet_spawn_script : MonoBehaviour
 {
     public GameObject bullet;
     private Animator animator;
-    [SerializeField] private AudioSource bullet_source;
+    
 
     public void Start()
     {
@@ -37,7 +37,7 @@ public class bullet_spawn_script : MonoBehaviour
 
             GameObject newBullet = Instantiate(bullet, transform.position, rotation);
             newBullet.GetComponent<Bullet>().SetDirection(direction);
-            bullet_source.Play();
+            
         }
     }
 }

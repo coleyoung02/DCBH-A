@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-
 using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
 {
     public bool dead = false;
-
-    [SerializeField] private GameObject deathMenu;
-
     // Health
     //public Slider hpSlider;
     public static int maxHealth = 100;
@@ -44,36 +40,29 @@ public class PlayerHealth : MonoBehaviour
     void Start() 
     {
         //despacito
-        actions.Add(1, UseHealthPotion);
-        actions.Add(2, UseManaPotion);
-        actions.Add(3, CastFireball);
-        actions.Add(4, ThrowMolotov);
+
+        health = 100;
+        
+        actions.Add(1, CastFireball);
+        actions.Add(2, ThrowMolotov);
 
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (!GameManager.EnablePlayerInput)
+        GameManager.timer += Time.deltaTime;
+        if(health <= 0)
+        {
+            dead = true;
+            gameObject.SetActive(false);
+            SceneManager.LoadScene("Death");
+        }
+        /*if (!GameManager.EnablePlayerInput)
         {
             return;
         }
-
-        // Check if the player is dead and show the death menu
-        if (dead == true)
-        {
-            // Set the active scene to the death scene
-            SceneManager.LoadScene("Death");
-
-            deathMenu.SetActive(true); // Show the death menu
-            Time.timeScale = 0f; // Pause the game
-        }
-
-        if (!dead)
-        {
-            HealthCode();
-            ManaCode();
-        }
+        */
         if (IFrames)
         {
             if(IFrameTimer <= 0f)
@@ -95,81 +84,63 @@ public class PlayerHealth : MonoBehaviour
         {
             actions[2]();
         }
-        if (Input.GetKeyDown("3"))
-        {
-            Debug.Log("Input detected");
-            actions[3]();
-        }
-        if (Input.GetKeyDown("4"))
-        {
-            actions[4]();
-        }
-    }
-    void ManaCode()
-    {
-        //mpSlider.value = mana;
-
-        if (mana > maxMana)
-        {
-            mana = maxMana;
-        }
-        if (Input.GetKeyDown(KeyCode.E) && mana > castedMana)
-        {
-            mana -= castedMana;
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            mana += regainMana;
-        }
-        // regen
-        if (mana < maxMana)
-        {
-            mana += regenMana * Time.deltaTime;
-        }
-    }
-
-    public void RestartGame()
-    {
-        Time.timeScale = 1f; // Resume the game
-        // Reload the gameplay scenes (GameScene and PersistentObjects)
-        SceneManager.LoadScene("GameScene", LoadSceneMode.Single); // Reload the GameScene
-        SceneManager.LoadScene("PersistentObjects", LoadSceneMode.Additive); // Reload PersistentObjects
-        deathMenu.SetActive(false); // Hide the death menu
-    }
-
-    // Function to quit to the main menu
-    public void QuitToMainMenu()
-    {
-        Time.timeScale = 1f; // Resume the game
-        // Load the main menu scene
-        SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
-        deathMenu.SetActive(false); // Hide the death menu
-    }
-    void HealthCode()
-    {
-       // hpSlider.value = health;
-
-        if (health <= 0)
-        {
-            dead = true;
-        }
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-        
-        //if (Input.GetKeyDown(KeyCode.A))
+        //if (Input.GetKeyDown("3"))
         //{
-        //    heal(healAmount);
+        //    Debug.Log("Input detected");
+        //    actions[3]();
         //}
-        //if (Input.GetKeyDown(KeyCode.D))
+        //if (Input.GetKeyDown("4"))
         //{
-        //    damage(damageAmount);
+        //    actions[4]();
         //}
-        
-        void heal(int healAmount) { health += healAmount; }
-        void damage(int damage) { health -= damage; }
     }
+    //void ManaCode()
+    //{
+    //    //mpSlider.value = mana;
+
+    //    if (mana > maxMana)
+    //    {
+    //        mana = maxMana;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.E) && mana > castedMana)
+    //    {
+    //        mana -= castedMana;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        mana += regainMana;
+    //    }
+    //    // regen
+    //    if (mana < maxMana)
+    //    {
+    //        mana += regenMana * Time.deltaTime;
+    //    }
+    //}
+
+    //void HealthCode()
+    //{
+    //   // hpSlider.value = health;
+
+    //    if (health <= 0)
+    //    {
+    //        dead = true;
+    //    }
+    //    if (health > maxHealth)
+    //    {
+    //        health = maxHealth;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.A))
+    //    {
+    //        heal(healAmount);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.D))
+    //    {
+    //        damage(damageAmount);
+    //    }
+
+    //    void heal(int healAmount) { health += healAmount; }
+    //    void damage(int damage) { health -= damage; }
+    //}
     void UseManaPotion()
     {
         //adds to the players mana. Again, specific numbers are placeholders. 
@@ -194,7 +165,8 @@ public class PlayerHealth : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f;
 
-            GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+            GameObject fireball = Instantiate(fireballPrefab, transform.position,Quaternion.Euler(new Vector3(0, 0, 0)));
+
             fireball.GetComponent<Fireball>().Initialize(mousePosition);
             mana -= 25;
         }
@@ -249,12 +221,23 @@ public class PlayerHealth : MonoBehaviour
         {
             IFrames = true;
             health -= 15;
-            collision.gameObject.GetComponent<Enemy>().enemyHealth -= 15;
+            
         }
     }
 
     public void takeDamage(int dmg)
     {
         health -= dmg;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("PersistentObjects", LoadSceneMode.Additive);
+    }
+    
+    public void QuitToMain()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 }
