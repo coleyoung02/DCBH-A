@@ -2041,7 +2041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.1
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 207802889059843437, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2089,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 1607608246}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: dashSpeed
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4676652368672754045, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: moveSpeed
@@ -2126,6 +2126,10 @@ PrefabInstance:
     - target: {fileID: 7855695586856556505, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855695586856556505, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8954637358992079822, guid: 9b5f5ee9b0088c14e8b1a3c3ab4ee505, type: 3}
       propertyPath: m_BodyType
