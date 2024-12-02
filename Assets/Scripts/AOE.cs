@@ -6,7 +6,7 @@ using UnityEngine;
 public class AOE : MonoBehaviour
 {
 
-    public float damagePerSecond = 10f;
+    public float damagePerSecond = 100f;
     public float duration = 5f;
 
     void Start()

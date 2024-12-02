@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using UnityEditor.Search;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
@@ -40,6 +40,8 @@ public class PlayerHealth : MonoBehaviour
     void Start() 
     {
         //despacito
+
+        health = 100;
         
         actions.Add(1, CastFireball);
         actions.Add(2, ThrowMolotov);
@@ -54,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
         {
             dead = true;
             gameObject.SetActive(false);
+            SceneManager.LoadScene("Death");
         }
         /*if (!GameManager.EnablePlayerInput)
         {
@@ -225,5 +228,16 @@ public class PlayerHealth : MonoBehaviour
     public void takeDamage(int dmg)
     {
         health -= dmg;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("PersistentObjects", LoadSceneMode.Additive);
+    }
+    
+    public void QuitToMain()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 }

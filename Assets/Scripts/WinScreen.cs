@@ -24,7 +24,8 @@ public class WinScreen : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("PersistentObjects", LoadSceneMode.Additive);
         
     }
 
