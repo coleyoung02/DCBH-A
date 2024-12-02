@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 5875876421093514120}
   - component: {fileID: 8163667618772385576}
   - component: {fileID: 597610581453781498}
-  - component: {fileID: 3287322067634897722}
   m_Layer: 0
   m_Name: Enemy Ranged
   m_TagString: Enemy
@@ -35,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5, y: -6.02, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 6}
+  m_LocalScale: {x: 8, y: 8, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2747780269756613502}
@@ -160,7 +159,7 @@ MonoBehaviour:
   fireCooldown: 1
   bullet: {fileID: 3041337140516959188, guid: 461697fd0a8498f408c33d90b741db40, type: 3}
   _attackRange: 40
-  _speed: 0
+  _speed: 10
   ignore:
     serializedVersion: 2
     m_Bits: 64
@@ -239,21 +238,6 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
---- !u!114 &3287322067634897722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6581652715519909994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff494a4846d2fa48b5d6c4f1aecd4e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolPoint1: {x: 0, y: 0}
-  partrolPoint2: {x: 0, y: 0}
-  enemyHealth: 25
 --- !u!1 &6880502336612413896
 GameObject:
   m_ObjectHideFlags: 0

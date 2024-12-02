@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("take dmg");
         enemyHealth -= damage;
         healthBar.UpdateHealthBar(enemyHealth, enemyMaxHealth);
     }
@@ -40,6 +41,5 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
     
 }
