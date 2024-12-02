@@ -11,16 +11,20 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rb2d;
+    [SerializeField] private AudioSource audioSource;
     private Vector2 moveDirection;
     private bool isDashing = false;
     private float dashTime;
     private float lastDashTime;
+
+    private bool stepping = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         // Get the Rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
+        
 
         if (rb2d == null)
         {
@@ -46,10 +50,18 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection.magnitude > 0)
         {
             animator.SetBool("isMoving", true);
+            if(stepping == false)
+            {
+                audioSource.Play();
+                stepping = true;
+
+            }
             //Debug.Log("Movement detected: " + moveDirection);
         }
         else
         {
+            audioSource.Pause();
+            stepping = false;
             animator.SetBool("isMoving", false);
         }
 

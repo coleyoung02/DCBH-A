@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             Die();
+            GameManager.score++;
         }
     }
 
