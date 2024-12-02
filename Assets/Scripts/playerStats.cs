@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEditor.Search;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
 {
     public bool dead = false;
+
+    [SerializeField] private GameObject deathMenu;
+
     // Health
     //public Slider hpSlider;
     public static int maxHealth = 100;
@@ -53,6 +57,16 @@ public class PlayerHealth : MonoBehaviour
         if (!GameManager.EnablePlayerInput)
         {
             return;
+        }
+
+        // Check if the player is dead and show the death menu
+        if (dead == true)
+        {
+            // Set the active scene to the death scene
+            SceneManager.LoadScene("Death");
+
+            deathMenu.SetActive(true); // Show the death menu
+            Time.timeScale = 0f; // Pause the game
         }
 
         if (!dead)
@@ -114,6 +128,23 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; // Resume the game
+        // Reload the gameplay scenes (GameScene and PersistentObjects)
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Single); // Reload the GameScene
+        SceneManager.LoadScene("PersistentObjects", LoadSceneMode.Additive); // Reload PersistentObjects
+        deathMenu.SetActive(false); // Hide the death menu
+    }
+
+    // Function to quit to the main menu
+    public void QuitToMainMenu()
+    {
+        Time.timeScale = 1f; // Resume the game
+        // Load the main menu scene
+        SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
+        deathMenu.SetActive(false); // Hide the death menu
+    }
     void HealthCode()
     {
        // hpSlider.value = health;

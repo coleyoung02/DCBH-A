@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PersistentObjects.unity
     guid: 61fb2d0c73c4acb47aba24054ca8c2df
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: d877c12190385884e8bc2b3ba95c21d5
   m_configObjects: {}
