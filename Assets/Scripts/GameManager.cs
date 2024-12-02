@@ -5,6 +5,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static int score;
+    public static float timer;
+
+    private void Start()
+    {
+        score = 0;
+        timer = 0;
+    }
+
     public enum Controls
     {
         MoveUp,

@@ -6,12 +6,21 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 5f;
     private Vector3 moveDirection;
+    private Camera camera;
+    private AudioSource audioSource;
+
 
     public void SetDirection(Vector3 direction)
     {
         moveDirection = direction;
         moveDirection.z = 0;
         moveDirection = moveDirection.normalized;
+    }
+
+    private void Start()
+    {
+        camera = Camera.main;
+        audioSource = camera.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,7 +38,8 @@ public class Bullet : MonoBehaviour
         Debug.Log("WHAT THE HELL");
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().enemyHealth -= 5;
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(5); 
+            audioSource.Play();
 
         }
         Destroy(gameObject);

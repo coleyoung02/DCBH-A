@@ -49,15 +49,17 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        GameManager.timer += Time.deltaTime;
         if(health <= 0)
         {
             dead = true;
             gameObject.SetActive(false);
         }
-        if (!GameManager.EnablePlayerInput)
+        /*if (!GameManager.EnablePlayerInput)
         {
             return;
         }
+        */
         if (IFrames)
         {
             if(IFrameTimer <= 0f)
