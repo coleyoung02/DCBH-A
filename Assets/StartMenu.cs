@@ -18,7 +18,7 @@ public class StartMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("GameScene");
 
         SceneManager.LoadScene("PersistentObjects", LoadSceneMode.Additive);
     }

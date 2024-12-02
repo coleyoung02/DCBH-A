@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireCooldown: 1
-  bullet: {fileID: 0}
+  bullet: {fileID: 3041337140516959188, guid: 461697fd0a8498f408c33d90b741db40, type: 3}
   _attackRange: 120
   _speed: 0
   ignore:
